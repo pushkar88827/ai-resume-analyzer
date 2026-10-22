@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>Careerly — AI Resume & Interview Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="Careerly home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>careerly<span class="brand-period">.</span></span>
+      </a>
+
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">▦</span>Overview</button>
+        <button class="nav-item" data-view="analyzer"><span class="nav-icon">▤</span>Resume analyzer</button>
+        <button class="nav-item" data-view="practice"><span class="nav-icon">◉</span>Interview practice</button>
+        <button class="nav-item" data-view="progress"><span class="nav-icon">↗</span>My progress</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="upgrade-card">
+          <div class="upgrade-spark">✦</div>
+          <strong>Your next role is closer.</strong>
+          <p>Keep practicing to build your interview confidence.</p>
+          <button class="text-button" data-go="practice">Start a practice session <span>→</span></button>
+        </div>
+        <button class="profile-button" id="profileButton" aria-label="Change user name">
+          <span class="avatar" id="profileInitials">U</span>
+          <span class="profile-copy"><strong id="profileName">Guest</strong><small>Personal workspace</small></span>
+          <span class="profile-more">···</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuButton" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumbCurrent">Overview</strong></div>
+        <div class="topbar-actions">
+          <span class="today-label" id="todayLabel"></span>
+          <button class="icon-button" aria-label="Notifications">♧<i></i></button>
+          <span class="avatar avatar-small" id="topbarInitials">U</span>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="view active" id="dashboardView">
+          <div class="welcome-row">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAREER JOURNEY</div>
+              <h1>Welcome, <span id="welcomeName">there</span> <span class="wave">✦</span></h1>
+              <p class="subtitle">A little practice today can make a big difference tomorrow.</p>
+            </div>
+            <button class="button button-primary" data-go="analyzer"><span>＋</span> New analysis</button>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div class="stat-top"><span>Interview readiness</span><span class="stat-icon violet">✳</span></div>
+              <div class="stat-value">72<span class="stat-unit">/100</span></div>
+              <div class="stat-foot"><span class="trend">↗ 8 pts</span> <span>vs. last week</span></div>
+              <div class="mini-bars" aria-label="Readiness increased over the last five sessions">
+                <i style="height:32%"></i><i style="height:45%"></i><i style="height:40%"></i><i style="height:62%"></i><i style="height:55%"></i><i style="height:78%"></i><i class="bar-current" style="height:92%"></i>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span>Practice sessions</span><span class="stat-icon peach">◎</span></div>
+              <div class="stat-value">12</div>
+              <div class="stat-foot"><span class="trend">+3</span> <span>this month</span></div>
+              <div class="stat-note"><span class="note-icon">✦</span> You're building a great habit</div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span>Resume match</span><span class="stat-icon mint">⌕</span></div>
+              <div class="stat-value">86<span class="stat-unit">%</span></div>
+              <div class="stat-foot"><span class="trend">Strong match</span> <span>Frontend Developer</span></div>
+              <div class="match-track"><span></span></div>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel activity-panel">
+              <div class="panel-heading">
+                <div><h2>Your progress</h2><p>Readiness score over your recent sessions</p></div>
+                <button class="select-button" aria-label="Showing this month">This month⌄</button>
+              </div>
+              <div class="chart-wrap">
+                <div class="chart-y-labels"><span>100</span><span>75</span><span>50</span><span>25</span><span>0</span></div>
+                <div class="chart">
+                  <div class="chart-gridlines"><i></i><i></i><i></i><i></i><i></i></div>
+                  <svg viewBox="0 0 640 190" preserveAspectRatio="none" role="img" aria-label="Readiness score is trending upward from 42 to 72">
+                    <defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#7867ed" stop-opacity=".17"/><stop offset="100%" stop-color="#7867ed" stop-opacity="0"/></linearGradient></defs>
+                    <path class="chart-area" d="M0,145 C36,140 52,132 82,135 S132,120 165,122 S215,106 248,112 S300,90 330,97 S384,75 412,83 S465,63 495,69 S545,44 578,52 S615,27 640,24 L640,190 L0,190 Z"/>
+                    <path class="chart-line" d="M0,145 C36,140 52,132 82,135 S132,120 165,122 S215,106 248,112 S300,90 330,97 S384,75 412,83 S465,63 495,69 S545,44 578,52 S615,27 640,24"/>
+                    <circle cx="640" cy="24" r="5" class="chart-point"/>
+                  </svg>
+                  <div class="chart-x-labels"><span>Sep 1</span><span>Sep 5</span><span>Sep 10</span><span>Sep 15</span><span>Sep 20</span><span>Sep 25</span><span>Today</span></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel focus-panel">
+              <div class="panel-heading"><div><h2>Focus areas</h2><p>Skills to work on next</p></div><span class="tiny-badge">TOP 3</span></div>
+              <div class="focus-list">
+                <div class="focus-item"><span class="focus-number">01</span><div class="focus-info"><strong>System design</strong><span>Needs more practice</span><div class="focus-track"><i style="width:38%"></i></div></div><span class="focus-score">38%</span></div>
+                <div class="focus-item"><span class="focus-number">02</span><div class="focus-info"><strong>Behavioral answers</strong><span>Getting there</span><div class="focus-track"><i style="width:61%"></i></div></div><span class="focus-score">61%</span></div>
+                <div class="focus-item"><span class="focus-number">03</span><div class="focus-info"><strong>Technical depth</strong><span>Good progress</span><div class="focus-track"><i style="width:74%"></i></div></div><span class="focus-score">74%</span></div>
+              </div>
+              <button class="panel-link" data-go="practice">Practice a focus area <span>→</span></button>
+            </section>
+
+            <section class="panel sessions-panel">
+              <div class="panel-heading"><div><h2>Recent sessions</h2><p>Pick up where you left off</p></div><button class="plain-link" data-go="progress">View all →</button></div>
+              <div class="session-table">
+                <div class="session-row session-header"><span>SESSION</span><span>DATE</span><span>SCORE</span><span></span></div>
+                <div class="session-row"><span class="session-name"><i class="session-dot dot-violet"></i>Frontend Developer</span><span>Today, 10:42 AM</span><span class="score-pill">82%</span><button class="row-arrow" aria-label="Open session">↗</button></div>
+                <div class="session-row"><span class="session-name"><i class="session-dot dot-peach"></i>Behavioral practice</span><span>Yesterday</span><span class="score-pill score-mid">68%</span><button class="row-arrow" aria-label="Open session">↗</button></div>
+                <div class="session-row"><span class="session-name"><i class="session-dot dot-blue"></i>Product Designer</span><span>Sep 24, 2026</span><span class="score-pill">76%</span><button class="row-arrow" aria-label="Open session">↗</button></div>
+              </div>
+            </section>
+
+            <section class="next-card">
+              <div class="next-card-content">
+                <span class="next-overline">YOUR NEXT STEP</span>
+                <h2>Ready for a quick<br>mock interview?</h2>
+                <p>Get personalized questions based on your target role and resume.</p>
+                <button class="button button-light" data-go="practice">Start practicing <span>→</span></button>
+              </div>
+              <div class="next-orbit orbit-one"></div><div class="next-orbit orbit-two"></div>
+              <div class="next-spark">✳</div>
+            </section>
+          </div>
+          <p class="demo-note">Demo dashboard · Your data will appear here once connected to your account.</p>
+        </section>
+
+        <section class="view" id="analyzerView">
+          <div class="page-heading">
+            <div><div class="eyebrow"><span class="eyebrow-dot"></span> RESUME TOOLKIT</div><h1>Make your resume work harder.</h1><p class="subtitle">See how well your experience aligns with the role you want.</p></div>
+          </div>
+          <div class="analyzer-layout">
+            <section class="panel analyzer-form">
+              <div class="section-title"><span class="step-number">01</span><div><h2>Add your resume</h2><p>PDF or DOCX, up to 5 MB</p></div></div>
+              <label class="upload-box" id="uploadBox" for="resumeFile">
+                <input type="file" id="resumeFile" accept=".pdf,.docx">
+                <span class="upload-icon">↑</span>
+                <strong id="uploadTitle">Drop your resume here</strong>
+                <span id="uploadSub">or <em>browse files</em> from your device</span>
+              </label>
+              <div class="field-group"><label for="jobRole">Target job title</label><input type="text" id="jobRole" placeholder="e.g. Frontend Developer"></div>
+              <div class="field-group"><label for="jobDescription">Job description <span class="optional">OPTIONAL</span></label><textarea id="jobDescription" rows="5" placeholder="Paste the job description here to get a more tailored match analysis..."></textarea></div>
+              <button class="button button-primary analyze-button" id="analyzeButton"><span>✳</span> Analyze my resume</button>
+              <p class="privacy-note"><span>♢</span> Your file is processed for this request and sent to the configured AI service; this app does not save it.</p>
+            </section>
+            <section class="panel analyzer-info">
+              <span class="info-illustration">✳</span><span class="info-label">YOUR ANALYSIS INCLUDES</span>
+              <h2>A clearer picture<br>of your next move.</h2>
+              <div class="analysis-benefit"><span class="benefit-check">✓</span><div><strong>Role match score</strong><p>See how your experience lines up with the role.</p></div></div>
+              <div class="analysis-benefit"><span class="benefit-check">✓</span><div><strong>Skills & keyword insights</strong><p>Find strengths and important skills to add.</p></div></div>
+              <div class="analysis-benefit"><span class="benefit-check">✓</span><div><strong>Personalized practice</strong><p>Turn your results into interview questions.</p></div></div>
+              <div class="info-quote">“Small improvements add up to a stronger story.”<span>YOUR CAREERLY COACH</span></div>
+            </section>
+          </div>
+          <section class="panel result-panel hidden" id="analysisResult" aria-live="polite">
+            <div class="result-heading"><div><span class="eyebrow"><span class="eyebrow-dot"></span> AI ANALYSIS</span><h2>Your resume snapshot</h2><p id="resultRole">For your target role</p></div><div class="result-score"><strong id="matchScore">—</strong><span>/ 100<br>role match</span></div></div>
+            <p id="analysisSummary" class="analysis-summary"></p>
+            <div class="result-grid"><div class="result-block"><span class="result-label">MATCHING STRENGTHS</span><div class="tag-list" id="strengthList"></div></div><div class="result-block"><span class="result-label">AREAS TO STRENGTHEN</span><div class="tag-list tag-list-warm" id="improvementList"></div></div></div>
+            <div class="result-block"><span class="result-label">KEYWORDS TO CONSIDER</span><div class="tag-list tag-list-warm" id="keywordList"></div></div>
+            <button class="button button-primary" data-go="practice">Practice for this role <span>→</span></button>
+            <p class="demo-note" id="analysisNotice">Analysis generated from your resume and target role.</p>
+          </section>
+        </section>
+
+        <section class="view" id="practiceView">
+          <div class="page-heading">
+            <div><div class="eyebrow"><span class="eyebrow-dot"></span> MOCK INTERVIEW</div><h1>Practice makes progress.</h1><p class="subtitle">Build confidence one thoughtful answer at a time.</p></div>
+          </div>
+          <div class="practice-layout">
+            <section class="panel practice-card">
+              <div class="practice-card-top"><span class="live-dot"></span> PRACTICE SESSION <span class="question-count" id="questionCount">QUESTION 1 OF 3</span></div>
+              <div class="question-progress"><i id="questionProgress"></i></div>
+              <div class="question-type" id="questionType">BEHAVIORAL</div>
+              <h2 id="questionText">Tell me about a time you had to solve a challenging problem. How did you approach it?</h2>
+              <p class="question-hint"><span>✦</span> Tip: Structure your story with the STAR method — Situation, Task, Action, Result.</p>
+              <label class="answer-label" for="answerInput">YOUR ANSWER</label>
+              <textarea id="answerInput" rows="7" placeholder="Take a moment to think, then write your answer here..."></textarea>
+              <div class="answer-footer"><span id="wordCount">0 words</span><button class="button button-primary" id="submitAnswer">Get feedback <span>→</span></button></div>
+              <div class="feedback-box hidden" id="feedbackBox" aria-live="polite"></div>
+            </section>
+            <aside class="practice-aside">
+              <section class="panel session-settings"><span class="aside-label">YOUR SESSION</span><h3>Frontend Developer</h3><p>Personalized practice · 3 questions</p><div class="setting-divider"></div><div class="setting-row"><span>Focus</span><strong>Behavioral</strong></div><div class="setting-row"><span>Difficulty</span><strong>Intermediate</strong></div><div class="setting-row"><span>Est. time</span><strong>~10 minutes</strong></div><button class="plain-link change-role" data-go="analyzer">Change target role ↗</button></section>
+              <section class="tip-card"><span class="tip-icon">✳</span><strong>Remember</strong><p>There are no perfect answers. Focus on sharing your thinking and what you learned.</p></section>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="progressView">
+          <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR JOURNEY</div><h1>Look how far you've come.</h1><p class="subtitle">Every session is a step toward your next opportunity.</p></div><button class="button button-primary" data-go="practice">＋ New practice</button></div>
+          <div class="stats-grid progress-stats">
+            <article class="stat-card"><div class="stat-top"><span>Average score</span><span class="stat-icon violet">↗</span></div><div class="stat-value">74<span class="stat-unit">%</span></div><div class="stat-foot"><span class="trend">+6%</span><span>this month</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Questions answered</span><span class="stat-icon peach">✎</span></div><div class="stat-value" id="questionsAnswered">36</div><div class="stat-foot"><span>Across all sessions</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Practice streak</span><span class="stat-icon mint">✦</span></div><div class="stat-value">4<span class="stat-unit"> days</span></div><div class="stat-foot"><span class="trend">Keep it going!</span></div></article>
+          </div>
+          <section class="panel history-panel"><div class="panel-heading"><div><h2>Session history</h2><p>Your recent interview practice</p></div></div><div class="session-table"><div class="session-row session-header"><span>SESSION</span><span>DATE</span><span>SCORE</span><span></span></div><div class="session-row"><span class="session-name"><i class="session-dot dot-violet"></i>Frontend Developer</span><span>Today, 10:42 AM</span><span class="score-pill">82%</span><button class="row-arrow" aria-label="Open session">↗</button></div><div class="session-row"><span class="session-name"><i class="session-dot dot-peach"></i>Behavioral practice</span><span>Yesterday</span><span class="score-pill score-mid">68%</span><button class="row-arrow" aria-label="Open session">↗</button></div><div class="session-row"><span class="session-name"><i class="session-dot dot-blue"></i>Product Designer</span><span>Sep 24, 2026</span><span class="score-pill">76%</span><button class="row-arrow" aria-label="Open session">↗</button></div><div class="session-row"><span class="session-name"><i class="session-dot dot-green"></i>Frontend Developer</span><span>Sep 21, 2026</span><span class="score-pill score-mid">69%</span><button class="row-arrow" aria-label="Open session">↗</button></div></div></section>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <section class="name-screen" id="nameScreen" aria-labelledby="nameScreenTitle" hidden>
+    <form class="name-card" id="nameForm">
+      <a class="brand name-brand" href="#" aria-label="Careerly home"><span class="brand-mark"><span></span><span></span><span></span></span><span>careerly<span class="brand-period">.</span></span></a>
+      <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAREER JOURNEY</div>
+      <h1 id="nameScreenTitle">Let’s get started.</h1>
+      <p class="subtitle">What should we call you?</p>
+      <label class="name-label" for="userNameInput">Your name</label>
+      <input id="userNameInput" name="name" type="text" maxlength="60" autocomplete="given-name" placeholder="Enter your name" required>
+      <button class="button button-primary" type="submit">Continue <span>→</span></button>
+      <p class="name-note">Your name is saved in this browser for your next visit.</p>
+    </form>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
